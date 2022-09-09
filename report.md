@@ -28,7 +28,9 @@ loaded packages and their versions.
 
 2.  *Write a single paragraph that demonstrates the use of italics,
     bold, bold italics, code, and includes a link. The paragraph does
-    not have to make sense.* This is the website for ***“R for Data
+    not have to make sense.* 
+    
+    This is the website for ***“R for Data
     Science”***. This book will teach you how to do **data science**
     with R: You’ll learn how to get your data into R, get it into the
     most useful structure, transform it, visualise it and model it. In
