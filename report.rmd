@@ -1,0 +1,133 @@
+---
+title: "HW 1, CS 625, Fall 2022"
+author: "Jason Lee"
+date: September 8, 2022
+output: rmarkdown::github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Git, GitHub
+
+1. *What is your GitHub username?*
+jxlee029
+
+2. *What is the URL of your remote GitHub repo (created through Mr. Kennedy's exercises)?*
+[jasonlee.github.io](https://github.com/jxlee029/git-workshop.git ()
+
+## R
+
+The command below will load the tidyverse package.  If you have installed R, RStudio, and the tidyverse package, it should display a list of loaded packages and their versions.
+
+
+## R Markdown 
+
+1. *Create a bulleted list with at least 3 items*
+* Programming
+* Geography
+* Engineering
+2. *Write a single paragraph that demonstrates the use of italics, bold, bold italics, code, and includes a link. The paragraph does not have to make sense.*
+This is the website for ***“R for Data Science”***. This book will teach you how to do **data science** with R: You’ll learn how to get your data into R, get it into the most useful structure, transform it, visualise it and model it. In this book, you will find a practicum of skills for data science. Just as a chemist learns how to clean test tubes and stock a lab, you’ll learn how to clean data and draw plots—and many other things besides. *These are the skills that allow data science to happen, and here you will find the best practices for doing each of these things with R.* You’ll learn how to use the grammar of graphics, literate programming, and reproducible research to save time. You’ll also learn how to manage cognitive resources to `facilitate discoveries` when wrangling, visualising, and exploring data.
+3. *Create a level 3 heading*
+
+### Hello world!!!
+
+
+## R 
+Run ggplot(data = mpg). What do you see?
+An empty graph
+How many rows are in mpg? How many columns?
+In the initial plot there is no row or columns visible
+What does the drv variable describe? Read the help for ?mpg to find out.
+It denotes the drive train of the vehicle
+Make a scatterplot of hwy vs cyl.
+[plot_hwy_vs-cyl_png in gitworkshop](https://github.com/jxlee029/git-workshop/raw/main/plot_hwy_vs-cyl_png)
+What happens if you make a scatterplot of class vs drv? Why is the plot not useful?
+It is the class of the vehicle vs the drive train type of the vehicle. the plot would graph the variations between the two keys.
+
+#### Data Visualization Exercises
+
+1. (Q2) *How many rows are in mpg? How many columns?*
+In the initial plot there is no row or columns visible
+1. (Q4) *Make a scatterplot of hwy vs cyl.*
+![here is a picture of the plot](https://github.com/jxlee029/git-workshop/raw/main/plot_hwy_vs-cyl_png)
+
+#### Workflow: basics Exercises
+
+1. (Q2) *Tweak each of the following R commands so that they run correctly (`library(tidyverse)` is correct):*
+
+```r
+library(tidyverse)
+ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy))
+
+filter(mpg, cyl == 8)
+
+filter(diamonds, carat > 3)
+```
+
+## Google Colab
+
+1. *What are the URLs of your Google Colab notebooks (both Python and R)?*
+https://colab.research.google.com/drive/1fBcM78k-XKN-CFtlOwxH7FMVyR6dPM5w?usp=sharing
+## Tableau
+
+*Insert your the image of your final bar chart here*
+![here is a picture of the Sales in the Eastern Region](https://github.com/jxlee029/git-workshop/raw/main/SalesintheEast.png)
+1. *What conclusions can you draw from the chart?*
+Tables and bookcases do not seem to be profitable in the east even if they have high sales. Chairs seem to do well. 
+## Observable and Vega-Lite
+
+### A Taste of Observable
+
+1. *In the "New York City weather forecast" section, try replacing `Forecast: detailedForecast` with `Forecast: shortForecast`. Then press the blue play button  or use Shift-Return to run your change. What happens?*
+The forecast text becomes the short version; this removes the wind direction and speed/ precipitation and percentage. this could be useful for mobile apps.
+
+1. *Under the scatterplot of temperature vs. name, try replacing `markCircle()` with `markSquare()`. Then press the blue play button  or use Shift-Return to run your change. What happens? How about `markPoint()`?*
+It changes the symbol for the graphed point to a square and then a point.
+
+1. *Under "Pick a location, see the weather forecast", pick a location on the map.  Where was the point you picked near?*
+I picked a point near Chesapeake, VA. the result showed Portsmouth VA. which is close.
+1. *The last visualization on this page is a "fancy" weather chart embedded from another notebook.  Click on the 3 dots next to that chart and choose 'Download PNG'.  Insert the PNG into your report.*
+![here is a picture of the Fancy Weather Chart](https://github.com/jxlee029/git-workshop/raw/main/weatherChart.png)
+### Charting with Vega-Lite
+
+`markCircle()`
+
+1. *Pass an option of `{ size: 200 }` to `markCircle()`.*
+The size of the circle increases
+1. *Try `markSquare` instead of `markCircle`.*
+Changes the circle to a square
+1. *Try `markPoint({ shape: 'diamond' })`.*
+Changes shape to a hollow diamond, and it shrinks because I erase the size: 200 parameter.
+
+`vl.x().fieldQ("Horsepower")`, ...
+
+1. *Change `Horsepower` to `Acceleration`*
+The acceleration field is in the X axis of the graph. Acceleration does not seem to have a direct relationship with horsepower in terms of MPG.
+1. *Swap what fields are displayed on the x- and y-axis*
+It inverses the table showing the acceleration as the y axis and miles per gallon as the x axis.
+`vl.tooltip().fieldN("Name")`
+
+1. *Change `Name` to `Origin`.*
+Changed the tooltip to the country of origin. Previously it was the name of the vehicle
+
+Another example, `count()`
+
+1. *Remove the `vl.y().fieldN("Origin")` line.*
+Removing the line removes the classification so it now shows the total count of records.
+1. *Replace `count()` with `average("Miles_per_Gallon")`.*
+Changed the x axis to miles per gallon. Initially with three countries and then with all records.
+## References
+
+*Every report must list the references that you consulted while completing the assignment. If you consulted a webpage, you must include the URL.*
+
+* https://observablehq.com/@observablehq/vega-lite
+* https://help.tableau.com/current/guides/get-started-tutorial/en-us/get-started-tutorial-focus.htm
+* https://www.earthdatascience.org/courses/earth-analytics/document-your-science/add-images-to-rmarkdown-report/
+* https://r4ds.had.co.nz/workflow-basics.html#practice
+* https://r4ds.had.co.nz/data-visualisation.html#common-problems
+* https://git.cs.odu.edu/tkennedy/git-workshop/-/wikis/Git-Workshop#gitignore
+* Insert Reference 1, https://www.example.com
+* Insert Reference 2, https://www.example.com/reallyreallyreally-extra-long-URI/
